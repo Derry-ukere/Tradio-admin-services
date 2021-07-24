@@ -1,10 +1,10 @@
-import dotenv from 'dotenv';
-import { ErrorReporter } from '@distinctai/node-error-reporting';
+// import dotenv from 'dotenv';
+// import { ErrorReporter } from '@distinctai/node-error-reporting';
 
-dotenv.config();
+// dotenv.config();
 
-const ReportError = ErrorReporter.configure({
-  sentryKey: <string>process.env.SENTRY_DSN,
-});
+// const ReportError = ErrorReporter.configure({
+//   sentryKey: <string>process.env.SENTRY_DSN,
+// });
 
-export { ReportError };
+// export { ReportError };
