@@ -5,7 +5,7 @@
   "main": "./src/bin/www/index.ts",
   "private": false,
   "scripts": {
-    "prod:start": "tsc && node ./dist/bin/www/index.js",
+    "prod:start": "node ./dist/bin/www/index.js",
     "dev:start": "NODE_ENV=development npm-run-all --parallel \"dev:watch\" \"prettier:watch\" \"test:watch\"",
     "dev:watch": "nodemon ./src/bin/www/index.ts",
     "build": "webpack",
