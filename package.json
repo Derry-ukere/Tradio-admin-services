@@ -5,7 +5,7 @@
   "main": "./src/bin/www/index.ts",
   "private": false,
   "scripts": {
-    "prod:start": "NODE_ENV=production node --optimize_for_size --max_old_space_size=920 --gc_interval=100 ./dist/bin/www/index.js",
+    "prod:start": "tsc && node ./dist/bin/www/index.js",
     "dev:start": "NODE_ENV=development npm-run-all --parallel \"dev:watch\" \"prettier:watch\" \"test:watch\"",
     "dev:watch": "nodemon ./src/bin/www/index.ts",
     "build": "webpack",
