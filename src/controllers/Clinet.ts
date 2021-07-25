@@ -55,7 +55,6 @@ export default class ClientController {
         }
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password,salt);
-        console.log('hashed password is',hashedPassword);
         const client = await AdminServices.resetPassword(decoded,hashedPassword);
         return  res.send(client);
       }

@@ -4,7 +4,7 @@ import { Logger } from '../../helpers';
 import connectDB from '../../lib/db';                                  
           
 app.use(errorHandler());                                         
-(async () => {   
+(async () => {    
   app.set('port', (process.env.PORT || 7000));    
        
   await connectDB()     

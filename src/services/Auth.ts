@@ -12,7 +12,6 @@ export default class AuthServices {
       const {name, email} = clientData;
       const clientExist = await AdminModel.findOne({email});
       let randompassword = Math.random().toString(8).substring(3);
-      console.log('randompassword', randompassword);
       if (clientExist){
         throw new Error ('user already exist');
       }

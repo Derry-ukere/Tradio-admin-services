@@ -5,27 +5,33 @@ const sendMail = (emailAddress : string, password : string) => {
   try {
     const transporter = nodeMailer.createTransport(
       smtpTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        secure:false,
         auth: {
-          user: 'mudiagaukere@gmail.com',
-          pass: 'LootingAvenger101%',
+          user: 'Tradiobtc@outlook.com',
+          pass: 'Mudiagaukere1256',
+          
         },
+        tls: {
+          ciphers:'SSLv3'
+        },
+        logger: true,
+        debug: true
       })
     );
-    // const link = `https://adoring-jepsen-5ed0f3.netlify.app/completeregistration/${token}`;
     const output = `
-    <h2>Tradio Admin</h2>
-    <p>Your Admin account has successfully been created</p>
-    <p>Your Password is : ${password}</p>
-    <p>Your Email is : ${emailAddress}</p>
+    Tradio Admin
+     Admin account has successfully been created
+     Your Password is : ${password}
+     Your Email is : ${emailAddress}
   `;
 
     const mailOptions = {
-      from: 'derryukere@gmail.com',
+      from: 'Tradiobtc@outlook.com',
       to: emailAddress,
       subject: 'Tradio Admin Account',
-      html: output,
+      text: output,
     };
 
     // send mail
@@ -45,27 +51,32 @@ const sendPasswordRecoverMail = (token : string, emailAddress : string) => {
   try {
     const transporter = nodeMailer.createTransport(
       smtpTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
+        host: 'smtp-mail.outlook.com',
+        port: 587,
+        secure:false,
         auth: {
-          user: 'mudiagaukere@gmail.com',
-          pass: 'LootingAvenger101%',
+          user: 'Tradiobtc@outlook.com',
+          pass: 'Mudiagaukere1256',
+          
         },
+        tls: {
+          ciphers:'SSLv3'
+        },
+        logger: true,
+        debug: true
       })
     );
     const link = `https://adoring-jepsen-5ed0f3.netlify.app/resetPasswrod/${token}`;
     const output = `
-    <h2>Tradio</h2>
-    <p>Click on the Link below to reset your Password</p>
-    <button><a href = ${link}>Click on the Link below to comfrim your Account</a></button> 
-
+    Tradio
+    Click on the Link below to reset your Password
+    ${link}
   `;
-
     const mailOptions = {
-      from: 'derryukere@gmail.com',
+      from: 'Tradiobtc@outlook.com',
       to: emailAddress,
       subject: 'Password Reset',
-      html: output,
+      text: output,
     };
 
     // send mail
